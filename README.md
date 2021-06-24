@@ -17,3 +17,8 @@ gerenciar os dados destes empregados, a exemplo os cartões de pontos. Empregado
 | Undo/redo | Qualquer transação associada as funcionalidades 1 a 7 deve ser desfeita (undo) ou refeita (redo). | A fazer | <ul><li>[ ] ok</li></ul>
 | Agenda de Pagamento | Cada empregado é pago de acordo com uma "agenda de pagamento". Empregados podem selecionar a agenda de pagamento que desejam. Por default, as agendas "semanalmente", "mensalmente" e "bi-semanalmente" são usadas, como explicado na descricao  geral. Posteriormente, um empregado pode pedir para ser pago de acordo com qualquer uma dessas agendas. | A fazer | <ul><li>[ ] ok</li></ul>
 | Criação de Novas Agendas de Pagamento | A direção da empresa pode criar uma nova agenda de pagamento e disponibilizá-la para os empregados escolherem, se assim desejarem. Uma agenda é especificada através de um string. Alguns exemplos mostram as possibilidades: "mensal 1": dia 1 de todo mês "mensal 7": dia 7 de todo mês "mensal $": último dia útil de todo mês "semanal 1 segunda": toda semana às segundas-feiras "semanal 1 sexta": toda semana às sextas-feiras "semanal 2 segunda": a cada 2 semanas às segundas-feiras | A fazer | <ul><li>[ ] ok</li></ul>
+
+## 🛠️ Tecnologias utilizadas
+- Java JDK 16.0.1
+
+- Eclipse IDE for Enterprise Java and Web Developers 2021-06
