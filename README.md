@@ -7,7 +7,7 @@ gerenciar os dados destes empregados, a exemplo os cartões de pontos. Empregado
 ## 👩‍💻 Funções 
 |  Título        | Descrição | Progresso atual | Finalizado | 
 |----------------|---------------|----------------|-----------|
-| Adição de um empregado  | Um novo empregado é adicionado ao sistema. Os seguintes atributos são fornecidos: nome, endereço, tipo (hourly, salaried, commissioned) e os atributos associados (salário horário, salário mensal, comissão). Um número de empregado (único) deve ser escolhido automaticamente pelo sistema. | A fazer | <ul><li>[ ] ok</li></ul>
+| Adição de um empregado  | Um novo empregado é adicionado ao sistema. Os seguintes atributos são fornecidos: nome, endereço, tipo (hourly, salaried, commissioned) e os atributos associados (salário horário, salário mensal, comissão). Um número de empregado (único) deve ser escolhido automaticamente pelo sistema. | Em andamento... | <ul><li>[ ] ok</li></ul>
 | Remoção de um empregado | Um empregado é removido do sistema. | A fazer | <ul><li>[ ] ok</li></ul>
 | Lançar um Cartão de Ponto | O sistema anotará a informação do cartão de ponto e a associará ao empregado correto. | A fazer | <ul><li>[ ] ok</li></ul>
 | Lançar um Resultado Venda | O sistema anotará a informação do resultado da venda e a associará ao empregado correto. | A fazer | <ul><li>[ ] ok</li></ul>
