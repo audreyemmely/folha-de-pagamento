@@ -3,7 +3,7 @@ package sistema_folha_de_pagamento;
 import java.lang.String;
 import java.util.Scanner;
 
-public class Empregados {
+public abstract class Empregados {
 
 	private int idEmpregado = 0;
 	private String nome;
@@ -191,6 +191,17 @@ public class Empregados {
 		}
 	}
 
-	//cansei, depois termino
+	//Salário total do empregado
+	public double definirSalarioLiquidoEmpregado(double salarioLiquidoEmp) {
+		return this.salarioLiquido = salarioLiquidoEmp;
+	}
+	
+	public abstract double definirSalarioLiquidoEmpregado();
+	
+	@Override
+	public String toString() {
+		return "ID:" + pegarIdEmpregado() + "~~~~" + "Nome: " + pegarNome() + "~~~~ Tipo: " + pegarTipoEmpregado() + 
+				"~~~~ ID sindicato: " + pegarIdSindicato() + "\n";
+	}
 
 }
