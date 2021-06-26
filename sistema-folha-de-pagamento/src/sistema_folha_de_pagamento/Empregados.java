@@ -4,17 +4,19 @@ import java.lang.String;
 import java.util.Scanner;
 
 public class Empregados {
-	//organizar melhor esses dados depois
+
 	private int idEmpregado = 0;
 	private String nome;
 	private String endereco;
 	private String tipoEmpregado;
+	
 	private String metodoPagamento;
 	private String tipoAgenda;
 	private int dataPagamento;
 	private int diaSemanaPagamento;
 	protected double salarioMensal;
-	protected double salarioLiquido;
+	protected double salarioLiquido = 0;
+	
 	protected boolean empregadoSindicalista = false;
 	private int idSindicato = -1;
 	private double taxaSindicato = 0;
@@ -29,9 +31,8 @@ public class Empregados {
 	}
 	
 	public String pegarNome() {
-		return nome;
+		return this.nome;
 	}
-
 	
 	public void definirEndereco() {
 		Scanner input = new Scanner(System.in);
@@ -40,13 +41,11 @@ public class Empregados {
 	}
 	
 	public String pegarEndereco() {
-		return endereco;
+		return this.endereco;
 	}
 	
-
-	
 	public boolean pegarEmpregadoSindicalista() {
-		return empregadoSindicalista;
+		return this.empregadoSindicalista;
 	}
 	
 	//Pagamento
@@ -55,12 +54,12 @@ public class Empregados {
 	}
 	
 	public String pegarMetodoPagamento() {
-		return metodoPagamento;
+		return this.metodoPagamento;
 	}
 	
 	//Id empregado
-	public void definirIdEmpregado(int idEmpregado) {
-		this.idEmpregado = idEmpregado;
+	public void definirIdEmpregado(int idEmp) {
+		this.idEmpregado = idEmp;
 	}
 	
 	public int pegarIdEmpregado() {
@@ -73,7 +72,7 @@ public class Empregados {
 	}
 	
 	public String pegarTipoEmpregado() {
-		return tipoEmpregado;
+		return this.tipoEmpregado;
 	}
 	
 	//Tipo de agenda
@@ -82,7 +81,7 @@ public class Empregados {
 	}
 	
 	public String pegarTipoAgenda() {
-		return tipoAgenda;
+		return this.tipoAgenda;
 	}
 	
 	//Data pagamento
@@ -91,11 +90,107 @@ public class Empregados {
 	}
 	
 	public int pegarDataPagamento() {
-		return dataPagamento;
+		return this.dataPagamento;
 	}
 	
 	//Dia da semana do pagamento
+	public void definirDiaSemanaPagamento(int diaSemanaPagamento) {
+		 this.diaSemanaPagamento = diaSemanaPagamento;
+	}
 	
+	public int pegarDiaSemanaPagamento() {
+		return this.diaSemanaPagamento;
+	}
+	
+	//Salário mensal
+	public void definirSalarioMensal() {
+		double salarioMensalEmp;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Informe o salário mensal:\nR$ ");
+		salarioMensalEmp = input.nextDouble();
+		input.close();
+		if(salarioMensalEmp < 0) {
+			System.out.println("Salário inválido! Informe um valor maior que 0, por favor.");
+		} else {
+			this.salarioMensal = salarioMensalEmp;
+		}
+	}
+	
+	public double pegarSalarioMensal() {
+		return this.salarioMensal;
+	}
+	
+	//Sindicato
+	public boolean empregadoSindicalista() {
+		return this.empregadoSindicalista;
+	}
+	
+	public void definirIdSindicato(int idEmp) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado referente ao sindicato: ");
+		int novoIdSindicato = input.nextInt();
+		input.close();
+		this.idSindicato = novoIdSindicato;
+	}
+	
+	public int pegarIdSindicato() {
+		return this.idSindicato;
+	}
+	
+	public void definirTaxaSindicato(int idEmp) {
+		double taxa;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe a taxa do sindicato: ");
+		taxa = input.nextDouble();
+		input.close();
+		if(taxa < 0) {
+			System.out.println("Por favor, insira um valor maior que 0.");
+		}else {
+			this.taxaSindicato = taxa;
+		}
+	}
+	
+	public double pegarTaxaSindicato() {
+		return this.taxaSindicato;
+	}
+	
+	public void definirOutrasTaxas() {
+		double outrasTaxasEmp;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o valor total das outras taxas a serem cobradas: ");
+		outrasTaxasEmp = input.nextDouble();
+		input.close();
+		if(outrasTaxasEmp < 0) {
+			System.out.println("Por favor, insira um valor maior que 0.");
+		}else {
+			this.outrasTaxas = outrasTaxasEmp;
+		}
+	}
+	
+	public double pegarOutrasTaxas() {
+		return this.outrasTaxas;
+	}
+	
+	public void definirFiliacaoSindicato(int idEmp) {
+		Scanner input = new Scanner(System.in);
+		
+		if(this.empregadoSindicalista == true) {
+			System.out.println("EMPREGADO FILIADO AO SINDICATO");
+			this.empregadoSindicalista = false;
+			this.idSindicato = -1;
+			this.taxaSindicato = 0;
+			this.outrasTaxas = 0;
+			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO NÃO FILIADO AO SINDICATO");
+		}else {
+			System.out.println("EMPREGADO NÃO FILIADO AO SINDICATO");
+			this.empregadoSindicalista = true;
+			definirIdSindicato(idEmp);
+			definirTaxaSindicato(idEmp);
+			definirOutrasTaxas();
+			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO FILIADO AO SINDICATO");
+		}
+	}
+
 	//cansei, depois termino
 
 }
