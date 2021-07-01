@@ -26,7 +26,6 @@ public class Comissionado extends Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe o resultado das vendas:");
 		resultadoVendasEmp = input.nextDouble();
-		input.close();
 		if(resultadoVendasEmp < 0) {
 			System.out.println("Por favor, informe um valor maior que 0.");
 		}else {
@@ -43,7 +42,6 @@ public class Comissionado extends Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe a comissão do empregado (o valor será considerado como porcentagem):");
 		comissaoVendasEmp = input.nextDouble();
-		input.close();
 		if(comissaoVendasEmp < 0) {
 			System.out.println("Por favor, informe um valor maior que 0.");
 		}else {

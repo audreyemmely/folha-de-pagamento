@@ -27,7 +27,6 @@ public abstract class Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Digite o nome completo do empregado:");
 		this.nome = input.nextLine();
-		input.close();
 	}
 	
 	public String pegarNome() {
@@ -37,7 +36,6 @@ public abstract class Empregados {
 	public void definirEndereco() {
 		Scanner input = new Scanner(System.in);
 		this.endereco = input.nextLine();
-		input.close();
 	}
 	
 	public String pegarEndereco() {
@@ -108,7 +106,6 @@ public abstract class Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Informe o salário mensal:\nR$ ");
 		salarioMensalEmp = input.nextDouble();
-		input.close();
 		if(salarioMensalEmp < 0) {
 			System.out.println("Salário inválido! Informe um valor maior que 0, por favor.");
 		} else {
@@ -129,7 +126,6 @@ public abstract class Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe o ID do empregado referente ao sindicato: ");
 		int novoIdSindicato = input.nextInt();
-		input.close();
 		this.idSindicato = novoIdSindicato;
 	}
 	
@@ -142,7 +138,6 @@ public abstract class Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe a taxa do sindicato: ");
 		taxa = input.nextDouble();
-		input.close();
 		if(taxa < 0) {
 			System.out.println("Por favor, insira um valor maior que 0.");
 		}else {
@@ -159,7 +154,6 @@ public abstract class Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe o valor total das outras taxas a serem cobradas: ");
 		outrasTaxasEmp = input.nextDouble();
-		input.close();
 		if(outrasTaxasEmp < 0) {
 			System.out.println("Por favor, insira um valor maior que 0.");
 		}else {

@@ -23,7 +23,6 @@ public class Horista extends Empregados {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe o salário por hora:");
 		double salario = input.nextDouble();
-		input.close();
 		if(salario < 0) {
 			System.out.println("Por favor, informe um valor maior que 0.");
 		}else {
