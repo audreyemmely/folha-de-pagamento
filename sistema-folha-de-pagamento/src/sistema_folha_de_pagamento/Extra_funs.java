@@ -44,7 +44,7 @@ public class Extra_funs {
 		Empregados aux = null;
 		int tipoEmp;
 		
-		System.out.println("Informe o tipo de empregado:\n1 - ASSALARIADO\n2-COMISSIONADO\n3-HORISTA");
+		System.out.println("Informe o tipo de empregado:\n1 - ASSALARIADO\n2 - COMISSIONADO\n3 - HORISTA");
 		tipoEmp = input.nextInt();
 		
 		if(tipoEmp == 1) {
