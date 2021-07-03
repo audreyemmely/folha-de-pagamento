@@ -23,10 +23,26 @@ public class Main {
 				sistemaFolhaDePagamento.adcEmpregado();
 				varAux = true;
 			}else if(opcao == 2) {
-				System.out.println("==== Função adição de um empregado ====");
+				System.out.println("==== Função remoção de um empregado ====");
 				sistemaFolhaDePagamento.removerEmpregado();
 				varAux = true;
-			}else{
+			}else if(opcao == 3) {
+				System.out.println("==== Função lançar um cartão de ponto ====");
+			}else if(opcao == 4) {
+				System.out.println("==== Função lançar um resultado da venda ====");
+			}else if(opcao == 5) {
+				System.out.println("==== Função lançar uma taxa de serviço ====");
+			}else if(opcao == 6) {
+				System.out.println("==== Função alterar detalhes de um empregado ====");
+			}else if(opcao == 7) {
+				//a fazer
+			}else if(opcao == 8) {
+				//a fazer
+			}else if(opcao == 9) {
+				//a fazer
+			}else if(opcao == 10) {
+				//a fazer
+			}else {
 				varAux = false;
 			}					
 		}
@@ -37,6 +53,14 @@ public class Main {
 		System.out.println("0 - Sair do Sistema");
 		System.out.println("1 - Adicionar empregado");
 		System.out.println("2 - Remover empregado");
+		System.out.println("3 - Lançar um cartão de ponto");
+		System.out.println("4 - Lançar um resultado da venda");
+		System.out.println("5 - Lançar uma taxa de serviço");
+		System.out.println("6 - Alterar detalhes de um empregado");
+//		System.out.println("7 - Rodar folha de pagamento do dia");
+//		System.out.println("8 - Undo/Redo");
+//		System.out.println("9 - Agenda de pagamento");
+//		System.out.println("10 - Criar novas agendas de pagamento");
 	}
 	
 }
