@@ -83,4 +83,23 @@ public class Extra_funs {
 		}
 	}
 	
+	public void lancarCartaoPonto() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado para lançar o cartão de ponto: ");
+		printListaEmpregados();
+		int idEmp = input.nextInt();
+		int index = -1;
+		index = procurarIdEmpregado(listaEmpregados, idEmp);
+		
+		if (index != -1) {
+			if(listaEmpregados.get(index).pegarTipoEmpregado().equals("HORISTA")) {
+				CartaoPonto.definirCartaoPonto((Horista) listaEmpregados.get(index));	
+			}else {
+				System.out.println("O empregado com ID " + idEmp + "não é horista.");
+			}
+		}else {
+			System.out.println("O empregado com ID " + idEmp + " não existe.");
+		}
+	}
+	
 }
