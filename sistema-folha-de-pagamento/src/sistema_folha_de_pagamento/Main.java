@@ -28,6 +28,8 @@ public class Main {
 				varAux = true;
 			}else if(opcao == 3) {
 				System.out.println("==== Função lançar um cartão de ponto ====");
+				sistemaFolhaDePagamento.lancarCartaoPonto();
+				varAux = true;
 			}else if(opcao == 4) {
 				System.out.println("==== Função lançar um resultado da venda ====");
 			}else if(opcao == 5) {
