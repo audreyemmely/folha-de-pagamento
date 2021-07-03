@@ -194,8 +194,8 @@ public abstract class Empregados {
 	
 	@Override
 	public String toString() {
-		return "ID:" + pegarIdEmpregado() + "~~~~" + "Nome: " + pegarNome() + "~~~~ Tipo: " + pegarTipoEmpregado() + 
-				"~~~~ ID sindicato: " + pegarIdSindicato() + "\n";
+		return "ID: " + pegarIdEmpregado() + " ---- " + "Nome: " + pegarNome() + " ---- Tipo: " + pegarTipoEmpregado() + 
+				" ---- ID sindicato: " + pegarIdSindicato() + "\n";
 	}
 
 }
