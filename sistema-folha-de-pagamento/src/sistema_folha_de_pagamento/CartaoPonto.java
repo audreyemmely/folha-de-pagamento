@@ -15,6 +15,8 @@ public class CartaoPonto {
 		}else {
 			horas = horaSaida - horaEntrada;
 			if(horas > 24) {
+				System.out.println("Informe o horário correto. O funcionário trabalhou mais de 24h.");
+			}else {
 				System.out.println("Horas trabalhadas: " + horas);
 				empHorista.definirSalarioDia(horas);
 				System.out.println("Cartão de ponto inserido no sistema.");
