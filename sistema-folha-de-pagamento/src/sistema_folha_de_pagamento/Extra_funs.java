@@ -67,4 +67,20 @@ public class Extra_funs {
 		}
 	}
 	
+	public void removerEmpregado() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado a ser removido: ");
+		printListaEmpregados();
+		int idEmp = input.nextInt();
+		int index = -1;
+		index = procurarIdEmpregado(listaEmpregados, idEmp);
+		
+		if(index != -1) {
+			listaEmpregados.remove(index);
+			System.out.println("O empregado com ID " + idEmp + " foi removido do sistema!");
+		}else {
+			System.out.println("O empregado com ID " + idEmp + " não existe.");
+		}
+	}
+	
 }
