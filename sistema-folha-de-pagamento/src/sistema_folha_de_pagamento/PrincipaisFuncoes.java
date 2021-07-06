@@ -3,7 +3,7 @@ package sistema_folha_de_pagamento;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Extra_funs {
+public class PrincipaisFuncoes {
 	private ArrayList<Empregados> listaEmpregados;
 	private int idEmpregado = 0;
 	
@@ -11,7 +11,8 @@ public class Extra_funs {
 		return this.listaEmpregados;
 	}
 	
-	public Extra_funs(boolean activate) {
+	//Construtor
+	public PrincipaisFuncoes(boolean iniciar) {
 		listaEmpregados = new ArrayList<Empregados>();
 	}
 	
@@ -110,7 +111,15 @@ public class Extra_funs {
 		int index = -1;
 		index = procurarIdEmpregado(listaEmpregados, idEmp);
 		
-		// falta fazer o if para essa situação
+		if(index != -1) {
+			if(listaEmpregados.get(index).pegarTipoEmpregado().equals("COMISSIONADO")) {
+				((Comissionado) listaEmpregados.get(index)).definirResultadoVendas();
+			}else {
+				System.out.println("O empregado com ID " + idEmp + " não é comissionado.");
+			}
+		}else {
+			System.out.println("O empregado com ID " + idEmp + " não existe.");
+		}
 	}
 	
 }
