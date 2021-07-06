@@ -102,4 +102,15 @@ public class Extra_funs {
 		}
 	}
 	
+	public void adcResultadoVendas() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado para lançar o resultado das vendas: ");
+		printListaEmpregados();
+		int idEmp = input.nextInt();
+		int index = -1;
+		index = procurarIdEmpregado(listaEmpregados, idEmp);
+		
+		// falta fazer o if para essa situação
+	}
+	
 }
