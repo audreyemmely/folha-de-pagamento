@@ -12,8 +12,8 @@ gerenciar os dados destes empregados, a exemplo os cartões de pontos. Empregado
 | Adição de um empregado  | Um novo empregado é adicionado ao sistema. Os seguintes atributos são fornecidos: nome, endereço, tipo (hourly, salaried, commissioned) e os atributos associados (salário horário, salário mensal, comissão). Um número de empregado (único) deve ser escolhido automaticamente pelo sistema. | Concluído | <ul><li>[x] ok</li></ul>
 | Remoção de um empregado | Um empregado é removido do sistema. | Concluído | <ul><li>[x] ok</li></ul>
 | Lançar um Cartão de Ponto | O sistema anotará a informação do cartão de ponto e a associará ao empregado correto. | Concluído | <ul><li>[x] ok</li></ul>
-| Lançar um Resultado Venda | O sistema anotará a informação do resultado da venda e a associará ao empregado correto. | Em andamento... | <ul><li>[ ] ok</li></ul>
-| Lançar uma taxa de serviço | O sistema anotará a informação da taxa de serviço e a associará ao empregado correto. | A fazer | <ul><li>[ ] ok</li></ul>
+| Lançar um Resultado Venda | O sistema anotará a informação do resultado da venda e a associará ao empregado correto. | Concluído | <ul><li>[x] ok</li></ul>
+| Lançar uma taxa de serviço | O sistema anotará a informação da taxa de serviço e a associará ao empregado correto. | Em andamento... | <ul><li>[ ] ok</li></ul>
 | Alterar detalhes de um empregado | Os seguintes atributos de um empregado podem ser alterados: nome, endereço, tipo (hourly,salaried,commisioned), método de pagamento, se pertence ao sindicato ou não, identificação no sindicato, taxa sindical. | A fazer | <ul><li>[ ] ok</li></ul>
 | Rodar a folha de pagamento para hoje | O sistema deve achar todos os empregados que devem ser pagos no dia indicado, deve calcular o valor do salário e deve providenciar o pagamento de acordo com o método escolhido pelo empregado. | A fazer | <ul><li>[ ] ok</li></ul>
 | Undo/redo | Qualquer transação associada as funcionalidades 1 a 7 deve ser desfeita (undo) ou refeita (redo). | A fazer | <ul><li>[ ] ok</li></ul>
