@@ -25,7 +25,7 @@ public abstract class Empregados {
 	//Infos principais do empregado
 	public void definirNome() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Digite o nome completo do empregado:");
+		System.out.println("Informe o nome completo do empregado:");
 		this.nome = input.nextLine();
 	}
 	
@@ -100,14 +100,14 @@ public abstract class Empregados {
 		return this.diaSemanaPagamento;
 	}
 	
-	//Salário mensal
+	//SalÃ¡rio mensal
 	public void definirSalarioMensal() {
 		double salarioMensalEmp;
 		Scanner input = new Scanner(System.in);
-		System.out.print("Informe o salário mensal:\nR$ ");
+		System.out.print("Informe o salÃ¡rio mensal:\nR$ ");
 		salarioMensalEmp = input.nextDouble();
 		if(salarioMensalEmp < 0) {
-			System.out.println("Salário inválido! Informe um valor maior que 0, por favor.");
+			System.out.println("SalÃ¡rio invÃ¡lido! Informe um valor maior que 0, por favor.");
 		} else {
 			this.salarioMensal = salarioMensalEmp;
 		}
@@ -174,18 +174,18 @@ public abstract class Empregados {
 			this.idSindicato = -1;
 			this.taxaSindicato = 0;
 			this.outrasTaxas = 0;
-			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO NÃO FILIADO AO SINDICATO");
+			System.out.println("SITUAÃ‡ÃƒO ALTERADA: EMPREGADO NÃƒO FILIADO AO SINDICATO");
 		}else {
-			System.out.println("EMPREGADO NÃO FILIADO AO SINDICATO");
+			System.out.println("EMPREGADO NÃƒO FILIADO AO SINDICATO");
 			this.empregadoSindicalista = true;
 			definirIdSindicato(idEmp);
 			definirTaxaSindicato(idEmp);
 			definirOutrasTaxas();
-			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO FILIADO AO SINDICATO");
+			System.out.println("SITUAÃ‡ÃƒO ALTERADA: EMPREGADO FILIADO AO SINDICATO");
 		}
 	}
 
-	//Salário total do empregado
+	//SalÃ¡rio total do empregado
 	public double definirSalarioLiquidoEmpregado(double salarioLiquidoEmp) {
 		return this.salarioLiquido = salarioLiquidoEmp;
 	}
