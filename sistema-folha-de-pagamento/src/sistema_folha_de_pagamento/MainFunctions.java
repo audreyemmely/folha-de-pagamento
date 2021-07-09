@@ -32,7 +32,7 @@ public class MainFunctions {
 	
 	public void printEmployeesList() {
 		if (employeesList.size() == 0) {
-			System.out.println("No momento não há empregados cadastrados no sistema!");
+			System.out.println("No momento não há empregados cadastrados no sistema!\n");
 		}else {
 			for(int i = 0; i < employeesList.size(); ++i) {
 				System.out.println(employeesList.get(i).toString());
@@ -78,9 +78,9 @@ public class MainFunctions {
 		
 		if(index != -1) {
 			employeesList.remove(index);
-			System.out.println("O empregado com ID " + empId + " foi removido do sistema!");
+			System.out.println("O empregado com ID " + empId + " foi removido do sistema!\n");
 		}else {
-			System.out.println("O empregado com ID " + empId + " não existe.");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
@@ -96,10 +96,10 @@ public class MainFunctions {
 			if(employeesList.get(index).getEmployeeType().equals("HORISTA")) {
 				Timecard.setTimecard((Hourly) employeesList.get(index));	
 			}else {
-				System.out.println("O empregado com ID " + empId + "não é horista.");
+				System.out.println("O empregado com ID " + empId + "não é horista.\n");
 			}
 		}else {
-			System.out.println("O empregado com ID " + empId + " não existe.");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
@@ -115,10 +115,29 @@ public class MainFunctions {
 			if(employeesList.get(index).getEmployeeType().equals("COMISSIONADO")) {
 				((Commissioned) employeesList.get(index)).setSalesResult();
 			}else {
-				System.out.println("O empregado com ID " + empId + " não é comissionado.");
+				System.out.println("O empregado com ID " + empId + " não é comissionado.\n");
 			}
 		}else {
-			System.out.println("O empregado com ID " + empId + " não existe.");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
+		}
+	}
+	
+	public void addServiceCharge() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado ao qual deve ser lançada uma taxa de serviço: ");
+		printEmployeesList();
+		int empId = input.nextInt();
+		int index = -1;
+		index = searchEmployeeId(employeesList, empId);
+		
+		if(index != -1) {
+			if(employeesList.get(index).getUnionEmployee() == true) {
+				employeesList.get(index).setOthersFee();
+			}else {
+				System.out.println("O empregado com ID " + empId + " não faz parte do sindicato.\n");
+			}
+		}else {
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	

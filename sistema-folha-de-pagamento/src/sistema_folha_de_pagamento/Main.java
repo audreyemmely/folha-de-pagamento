@@ -40,10 +40,11 @@ public class Main {
 				payrollSystem.addSalesResult();
 				varAux = true;
 			}else if(option == 5) {
-				System.out.println("==== Função lançar uma taxa de serviço ====\nEm andamento...");
-				//a fazer
+				System.out.println("==== Função lançar uma taxa de serviço ====");
+				payrollSystem.addServiceCharge();
+				varAux = true;
 			}else if(option == 6) {
-				System.out.println("==== Função alterar detalhes de um empregado ====\nNão iniciado.");
+				System.out.println("==== Função alterar detalhes de um empregado ====\nEm andamento...");
 				//a fazer
 			}else if(option == 7) {
 				System.out.println("==== Função rodar a folha de pagamento para hoje ====\nNão iniciado.");
