@@ -2,12 +2,12 @@ package sistema_folha_de_pagamento;
 
 import java.util.Scanner;
 
-public class Comissioned extends Employees {
+public class Commissioned extends Employees {
 
-	private double salesComission;
+	private double salesCommission;
 	private double salesResult;
 	
-	public Comissioned(int empId) {
+	public Commissioned(int empId) {
 		super.setName();
 		super.setAddress();
 		super.setMonthlySalary();
@@ -17,7 +17,7 @@ public class Comissioned extends Employees {
 		super.setScheduleType("BI-SEMANAL");
 		super.setPaymentDayWeekly(4);
 		super.setPaymentDate(-1);
-		setSalesComission();
+		setSalesCommission();
 		this.unionEmployee = false;
 	}
 	
@@ -37,20 +37,20 @@ public class Comissioned extends Employees {
 		return this.salesResult;
 	}
 	
-	public void setSalesComission() {
-		double empSalesComission;
+	public void setSalesCommission() {
+		double empSalesCommission;
 		Scanner input = new Scanner(System.in);
 		System.out.println("Informe a comissão do empregado (o valor será considerado como porcentagem):");
-		empSalesComission = input.nextDouble();
-		if(empSalesComission < 0) {
+		empSalesCommission = input.nextDouble();
+		if(empSalesCommission < 0) {
 			System.out.println("Por favor, informe um valor maior que 0.");
 		}else {
-			this.salesComission = empSalesComission/100;
+			this.salesCommission = empSalesCommission/100;
 		}
 	}
 	
-	public double getSalesComission() {
-		return this.salesComission;
+	public double getSalesCommission() {
+		return this.salesCommission;
 	}
 	
 	@Override

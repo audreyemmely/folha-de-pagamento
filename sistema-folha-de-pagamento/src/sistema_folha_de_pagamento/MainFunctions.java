@@ -55,7 +55,7 @@ public class MainFunctions {
 			System.out.println("Empregado assalariado adicionado ao sistema com sucesso!");
 		}else if(empType == 2) {
 			employeeId++;
-			aux = new Comissioned(employeeId);
+			aux = new Commissioned(employeeId);
 			employeesList.add(aux);
 			System.out.println("Empregado comissionado adicionado ao sistema com sucesso!");
 		}else if(empType == 3) {
@@ -113,7 +113,7 @@ public class MainFunctions {
 		
 		if(index != -1) {
 			if(employeesList.get(index).getEmployeeType().equals("COMISSIONADO")) {
-				((Comissioned) employeesList.get(index)).setSalesResult();
+				((Commissioned) employeesList.get(index)).setSalesResult();
 			}else {
 				System.out.println("O empregado com ID " + empId + " não é comissionado.");
 			}
