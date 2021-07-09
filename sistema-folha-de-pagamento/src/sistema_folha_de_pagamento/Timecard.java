@@ -2,23 +2,23 @@ package sistema_folha_de_pagamento;
 
 import java.util.Scanner;
 
-public class CartaoPonto {
-	public static void definirCartaoPonto(Horista empHorista) {
+public class Timecard {
+	public static void setTimecard(Hourly hourlyEmp) {
 		Scanner input = new Scanner(System.in);
-		double horas, horaEntrada, horaSaida;
+		double hours, entryTime, departureTime;
 		System.out.println("Informe a hora de entrada (formato 24h): ");
-		horaEntrada = input.nextInt();
+		entryTime = input.nextInt();
 		System.out.println("Informe a hora de saída (formato 24h): ");
-		horaSaida = input.nextInt();
-		if(horaEntrada > horaSaida) {
+		departureTime = input.nextInt();
+		if(entryTime > departureTime) {
 			System.out.println("Hora de entrada maior que a hora de saída!");
 		}else {
-			horas = horaSaida - horaEntrada;
-			if(horas > 24) {
+			hours = departureTime - entryTime;
+			if(hours > 24) {
 				System.out.println("Informe o horário correto. O funcionário trabalhou mais de 24h.");
 			}else {
-				System.out.println("Horas trabalhadas: " + horas);
-				empHorista.definirSalarioDia(horas);
+				System.out.println("Horas trabalhadas: " + hours);
+				hourlyEmp.getDaySalary(hours);
 				System.out.println("Cartão de ponto inserido no sistema.");
 			}
 		}

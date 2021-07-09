@@ -3,9 +3,9 @@ package sistema_folha_de_pagamento;
 import java.util.Scanner;
 
 public class Main {
-	private static PrincipaisFuncoes sistemaFolhaDePagamento = new PrincipaisFuncoes(true);
+	private static MainFunctions payrollSystem = new MainFunctions(true);
 
-	public static void menuSistema() {
+	public static void systemMenu() {
 		System.out.println("Bem-vindo/a ao Sistema de Folha de Pagamento!\nInforme a operação que deseja realizar no momento.");
 		System.out.println("[0] Sair do Sistema\n[1] Adicionar empregado\n[2] Remover empregado\n[3] Lançar um cartão de ponto\n[4] Lançar um resultado da venda\n[5] Lançar uma taxa de serviço");
 		System.out.println("[6] Alterar detalhes de um empregado\n[7] Rodar folha de pagamento do dia\n[8] Undo/Redo\n[9] Agenda de pagamento\n[10] Criar novas agendas de pagamentos\n");
@@ -13,48 +13,48 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int opcao;
-		boolean varAux = true; //variavel criada para auxiliar se o sistema deve encerrar ou nao
+		int option;
+		boolean varAux = true; //variable created to help if the system should shut down or not
 		
 		while(varAux) {
-			menuSistema();
-			opcao = input.nextInt();
+			systemMenu();
+			option = input.nextInt();
 			
-			if(opcao == 0) {
+			if(option == 0) {
 				System.out.println("Obrigada por usar o nosso sistema! Volte sempre! :)");
 				varAux = false;
-			}else if(opcao == 1) {
+			}else if(option == 1) {
 				System.out.println("==== Função adição de um empregado ====");
-				sistemaFolhaDePagamento.adcEmpregado();
+				payrollSystem.addEmployee();
 				varAux = true;
-			}else if(opcao == 2) {
+			}else if(option == 2) {
 				System.out.println("==== Função remoção de um empregado ====");
-				sistemaFolhaDePagamento.removerEmpregado();
+				payrollSystem.deleteEmployee();
 				varAux = true;
-			}else if(opcao == 3) {
+			}else if(option == 3) {
 				System.out.println("==== Função lançar um cartão de ponto ====");
-				sistemaFolhaDePagamento.lancarCartaoPonto();
+				payrollSystem.launchTimecard();
 				varAux = true;
-			}else if(opcao == 4) {
+			}else if(option == 4) {
 				System.out.println("==== Função lançar um resultado da venda ====");
-				sistemaFolhaDePagamento.adcResultadoVendas();
+				payrollSystem.addSalesResult();
 				varAux = true;
-			}else if(opcao == 5) {
+			}else if(option == 5) {
 				System.out.println("==== Função lançar uma taxa de serviço ====\nEm andamento...");
 				//a fazer
-			}else if(opcao == 6) {
+			}else if(option == 6) {
 				System.out.println("==== Função alterar detalhes de um empregado ====\nNão iniciado.");
 				//a fazer
-			}else if(opcao == 7) {
+			}else if(option == 7) {
 				System.out.println("==== Função rodar a folha de pagamento para hoje ====\nNão iniciado.");
 				//a fazer
-			}else if(opcao == 8) {
+			}else if(option == 8) {
 				System.out.println("==== Função undo/redo ====\nNão iniciado.");
 				//a fazer
-			}else if(opcao == 9) {
+			}else if(option == 9) {
 				System.out.println("==== Função agenda de pagamento ====\nNão iniciado.");
 				//a fazer
-			}else if(opcao == 10) {
+			}else if(option == 10) {
 				System.out.println("==== Função criação de novas agendas de pagamento ====\nNão iniciado.");
 				//a fazer
 			}else {
