@@ -141,4 +141,41 @@ public class MainFunctions {
 		}
 	}
 	
+	public void changeEmployeeData() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado que você deseja alterar os dados:");
+		printEmployeesList();
+		int empId = input.nextInt();
+		int index = -1;
+		index = searchEmployeeId(employeesList, empId);
+		
+		if(index != -1) {
+			System.out.println("Qual dado você deseja alterar?\n[1] - Nome\n[2] - Endereço\n"+
+								"[3] - Tipo do empregado\n[4] - Método de pagamento\n[5] - Situação sindical\n"+
+								"[6] - Identificação no sindicato\n[7] - Taxa sindical\n");
+			
+			int choice = input.nextInt();
+			
+			if(choice == 1) {
+				employeesList.get(index).setName();
+				System.out.println("Nome alterado com sucesso!");
+			}else if(choice == 2) {
+				employeesList.get(index).setAddress();
+				System.out.println("Endereço alterado com sucesso!");
+			}else if(choice == 3) {
+				System.out.println("O funcionário escolhido é do tipo " + employeesList.get(index).getEmployeeType());
+				int empType = 0;
+				if(empType == 2) {
+					employeesList.get(index).setMonthlySalary();
+					employeesList.get(index).setEmployeeType("COMISSIONADO");
+					employeesList.get(index).setScheduleType("BI-SEMANAL");
+					employeesList.get(index).setPaymentDayWeekly(4);
+					employeesList.get(index).setPaymentDate(-1);
+					((Commissioned) employeesList.get(index)).setSalesResult();
+				}else if(choice == 3) {
+					//fazer dps, cansei
+				}
+			}
+		}
+	}
 }
