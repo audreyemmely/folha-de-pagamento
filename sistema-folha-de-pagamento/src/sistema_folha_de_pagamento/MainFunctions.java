@@ -165,16 +165,99 @@ public class MainFunctions {
 			}else if(choice == 3) {
 				System.out.println("O funcionário escolhido é do tipo " + employeesList.get(index).getEmployeeType());
 				int empType = 0;
-				if(empType == 2) {
-					employeesList.get(index).setMonthlySalary();
-					employeesList.get(index).setEmployeeType("COMISSIONADO");
-					employeesList.get(index).setScheduleType("BI-SEMANAL");
-					employeesList.get(index).setPaymentDayWeekly(4);
-					employeesList.get(index).setPaymentDate(-1);
-					((Commissioned) employeesList.get(index)).setSalesResult();
-				}else if(choice == 3) {
-					//fazer dps, cansei
+				if(employeesList.get(index).equals("ASSALARIADO")) {
+					System.out.println("Informe o novo tipo de empregado:\n[2] - COMISSIONADO\n[3] - HORISTA");
+					empType = input.nextInt();
+					if(empType == 2) {
+						employeesList.get(index).setMonthlySalary();
+						employeesList.get(index).setEmployeeType("COMISSIONADO");
+						employeesList.get(index).setScheduleType("BI-SEMANAL");
+						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentDate(-1);
+						((Commissioned) employeesList.get(index)).setSalesResult();
+					}else if(empType == 3) {
+						((Hourly) employeesList.get(index)).setHourlyWage();
+						employeesList.get(index).setEmployeeType("HORISTA");
+						employeesList.get(index).setScheduleType("SEMANAL");
+						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentDate(-1);
+					}else {
+						System.out.println("Tipo de empregado não encontrado.");
+					}
+				}else if(employeesList.get(index).equals("COMISSIONADO")) {
+					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - HORISTA");
+					empType = input.nextInt();
+					if(empType == 1) {
+						employeesList.get(index).setEmployeeLiquidSalary();
+						employeesList.get(index).setEmployeeType("ASSALARIADO");
+						employeesList.get(index).setScheduleType("MENSAL");
+						employeesList.get(index).setPaymentDayWeekly(-1);
+						employeesList.get(index).setPaymentDate(27);
+					}else if(empType == 3) {
+						((Hourly) employeesList.get(index)).setHourlyWage();
+						employeesList.get(index).setEmployeeType("HORISTA");
+						employeesList.get(index).setScheduleType("SEMANAL");
+						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentDate(-1);
+					}else {
+						System.out.println("Tipo de empregado não encontrado.");
+					}
+				}else if(employeesList.get(index).equals("HORISTA")) {
+					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - COMISSIONADO");
+					empType = input.nextInt();	
+					if(empType == 1) {
+						employeesList.get(index).setEmployeeLiquidSalary();
+						employeesList.get(index).setEmployeeType("ASSALARIADO");
+						employeesList.get(index).setScheduleType("MENSAL");
+						employeesList.get(index).setPaymentDayWeekly(-1);
+						employeesList.get(index).setPaymentDate(27);
+					}else if(empType == 3) {
+						employeesList.get(index).setMonthlySalary();
+						employeesList.get(index).setEmployeeType("COMISSIONADO");
+						employeesList.get(index).setScheduleType("BI-SEMANAL");
+						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentDate(-1);
+						((Commissioned) employeesList.get(index)).setSalesResult();
+					}else {
+						System.out.println("Tipo de empregado não encontrado.");
+					}
 				}
+			}else if(choice == 4) {
+				System.out.println("O funcionário recebe da seguinte forma: " + employeesList.get(index).getPaymentMethod());
+				int paymentType;
+				if(employeesList.get(index).equals("CORREIOS")) {
+					System.out.println("Informe o novo tipo de pagamento:\n[1] - DEPOSITO\n[2] - EM MAOS");
+					paymentType = input.nextInt();
+					if(paymentType == 1) {
+						employeesList.get(index).setPaymentMethod("DEPOSITO");
+					}else if(paymentType == 2) {
+						employeesList.get(index).setPaymentMethod("EM MAOS");
+					}else {
+						System.out.println("O tipo de pagamento informado não é válido.");
+					}
+				}else if(employeesList.get(index).equals("EM MAOS")) {
+					System.out.println("Informe o novo tipo de pagamento:\n[1] - DEPOSITO\n[3] - CORREIOS");
+					paymentType = input.nextInt();
+					if(paymentType == 1) {
+						employeesList.get(index).setPaymentMethod("DEPOSITO");
+					}else if(paymentType == 3) {
+						employeesList.get(index).setPaymentMethod("CORREIOS");
+					}else {
+						System.out.println("O tipo de pagamento informado não é válido.");
+					}
+				}else if(employeesList.get(index).equals("DEPOSITO")) {
+					System.out.println("Informe o novo tipo de pagamento:\n[2] - EM MAOS\n[3] - CORREIOS");
+					paymentType = input.nextInt();
+					if(paymentType == 2) {
+						employeesList.get(index).setPaymentMethod("EM MAOS");
+					}else if(paymentType == 3) {
+						employeesList.get(index).setPaymentMethod("CORREIOS");
+					}else {
+						System.out.println("O tipo de pagamento informado não é válido.");
+					}
+				}
+			}else if(choice == 5) {
+				//continuar com coisas do sindicato e etc
 			}
 		}
 	}
