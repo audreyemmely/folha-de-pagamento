@@ -7,8 +7,8 @@ public class Main {
 
 	public static void systemMenu() {
 		System.out.println("Bem-vindo/a ao Sistema de Folha de Pagamento!\nInforme a operação que deseja realizar no momento.");
-		System.out.println("[0] Sair do Sistema\n[1] Adicionar empregado\n[2] Remover empregado\n[3] Lançar um cartão de ponto\n[4] Lançar um resultado da venda\n[5] Lançar uma taxa de serviço");
-		System.out.println("[6] Alterar detalhes de um empregado\n[7] Rodar folha de pagamento do dia\n[8] Undo/Redo\n[9] Agenda de pagamento\n[10] Criar novas agendas de pagamentos\n");
+		System.out.println("[0] Sair do Sistema\n[1] Adicionar funcionário\n[2] Remover funcionário\n[3] Lançar um cartão de ponto\n[4] Lançar um resultado da venda\n[5] Lançar uma taxa de serviço");
+		System.out.println("[6] Alterar detalhes de um funcionário\n[7] Rodar folha de pagamento do dia\n[8] Undo/Redo\n[9] Agenda de pagamento\n[10] Criar novas agendas de pagamentos\n");
 	}
 	
 	public static void main(String[] args) {
@@ -24,11 +24,11 @@ public class Main {
 				System.out.println("Obrigada por usar o nosso sistema! Volte sempre! :)");
 				varAux = false;
 			}else if(option == 1) {
-				System.out.println("==== Função adição de um empregado ====");
+				System.out.println("==== Função adição de um funcionário ====");
 				payrollSystem.addEmployee();
 				varAux = true;
 			}else if(option == 2) {
-				System.out.println("==== Função remoção de um empregado ====");
+				System.out.println("==== Função remoção de um funcionário ====");
 				payrollSystem.deleteEmployee();
 				varAux = true;
 			}else if(option == 3) {
@@ -44,10 +44,11 @@ public class Main {
 				payrollSystem.addServiceCharge();
 				varAux = true;
 			}else if(option == 6) {
-				System.out.println("==== Função alterar detalhes de um empregado ====\nEm andamento...");
-				//a fazer
+				System.out.println("==== Função alterar detalhes de um funcionário ====\n");
+				payrollSystem.changeEmployeeData();
+				varAux = true;
 			}else if(option == 7) {
-				System.out.println("==== Função rodar a folha de pagamento para hoje ====\nNão iniciado.");
+				System.out.println("==== Função rodar a folha de pagamento para hoje ====\nEm andamento...");
 				//a fazer
 			}else if(option == 8) {
 				System.out.println("==== Função undo/redo ====\nNão iniciado.");
