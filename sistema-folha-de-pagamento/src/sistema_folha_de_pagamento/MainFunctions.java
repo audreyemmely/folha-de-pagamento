@@ -282,6 +282,14 @@ public class MainFunctions {
 	public void runCurrentPayroll() {
 		Scanner input = new Scanner(System.in);
 		int paymentDay;
-		//falta implementar o resto
+		System.out.println("Informe o ano: ");
+		int year = input.nextInt();
+		System.out.println("Informe o mês: ");
+		int month = input.nextInt();
+		System.out.println("Informe o dia referente ao mês: ");
+		int monthDay = input.nextInt();
+		System.out.println("Informe o dia referente à semana:\n[1] - SEGUNDA\n[2] - TERÇA\n[3] - QUARTA\n[4] - QUINTA\n[5] - SEXTA");
+		int weekDay = input.nextInt();
+		
 	}
 }
