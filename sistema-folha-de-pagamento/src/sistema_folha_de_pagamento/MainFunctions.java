@@ -172,14 +172,14 @@ public class MainFunctions {
 						employeesList.get(index).setMonthlySalary();
 						employeesList.get(index).setEmployeeType("COMISSIONADO");
 						employeesList.get(index).setScheduleType("BI-SEMANAL");
-						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 						((Commissioned) employeesList.get(index)).setSalesResult();
 					}else if(empType == 3) {
 						((Hourly) employeesList.get(index)).setHourlyWage();
 						employeesList.get(index).setEmployeeType("HORISTA");
 						employeesList.get(index).setScheduleType("SEMANAL");
-						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 					}else {
 						System.out.println("Tipo de funcionário não encontrado.");
@@ -191,13 +191,13 @@ public class MainFunctions {
 						employeesList.get(index).setEmployeeLiquidSalary();
 						employeesList.get(index).setEmployeeType("ASSALARIADO");
 						employeesList.get(index).setScheduleType("MENSAL");
-						employeesList.get(index).setPaymentDayWeekly(-1);
+						employeesList.get(index).setPaymentWeeklyDay(-1);
 						employeesList.get(index).setPaymentDate(27);
 					}else if(empType == 3) {
 						((Hourly) employeesList.get(index)).setHourlyWage();
 						employeesList.get(index).setEmployeeType("HORISTA");
 						employeesList.get(index).setScheduleType("SEMANAL");
-						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 					}else {
 						System.out.println("Tipo de funcionário não encontrado.");
@@ -209,13 +209,13 @@ public class MainFunctions {
 						employeesList.get(index).setEmployeeLiquidSalary();
 						employeesList.get(index).setEmployeeType("ASSALARIADO");
 						employeesList.get(index).setScheduleType("MENSAL");
-						employeesList.get(index).setPaymentDayWeekly(-1);
+						employeesList.get(index).setPaymentWeeklyDay(-1);
 						employeesList.get(index).setPaymentDate(27);
 					}else if(empType == 3) {
 						employeesList.get(index).setMonthlySalary();
 						employeesList.get(index).setEmployeeType("COMISSIONADO");
 						employeesList.get(index).setScheduleType("BI-SEMANAL");
-						employeesList.get(index).setPaymentDayWeekly(4);
+						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 						((Commissioned) employeesList.get(index)).setSalesResult();
 					}else {
@@ -287,9 +287,19 @@ public class MainFunctions {
 		System.out.println("Informe o mês: ");
 		int month = input.nextInt();
 		System.out.println("Informe o dia referente ao mês: ");
-		int monthDay = input.nextInt();
+		int dayMonth = input.nextInt();
 		System.out.println("Informe o dia referente à semana:\n[1] - SEGUNDA\n[2] - TERÇA\n[3] - QUARTA\n[4] - QUINTA\n[5] - SEXTA");
 		int weekDay = input.nextInt();
 		
+		boolean checkLastDay = Calendar.lastDayMonth(year, month, dayMonth);
+		
+		if(checkLastDay == true) {
+			paymentDay = 28;
+		}else {
+			paymentDay = dayMonth;
+			if(dayMonth > 23 && dayMonth < 29) {
+				//criar pagamento agenda
+			}
+		}
 	}
 }

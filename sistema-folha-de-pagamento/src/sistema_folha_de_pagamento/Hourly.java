@@ -14,7 +14,7 @@ public class Hourly extends Employees {
 		super.setEmployeeType("HORISTA");
 		super.setPaymentMethod("DEPOSITO");
 		super.setScheduleType("SEMANAL");
-		super.setPaymentDayWeekly(4);
+		super.setPaymentWeeklyDay(4);
 		super.setPaymentDate(-1);
 		this.unionEmployee = false;
 	}

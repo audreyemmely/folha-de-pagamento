@@ -13,7 +13,7 @@ public abstract class Employees {
 	private String paymentMethod;
 	private String scheduleType;
 	private int paymentDate;
-	private int paymentDayWeekly;
+	private int paymentWeeklyDay;
 	protected double monthlySalary;
 	protected double liquidSalary = 0;
 	
@@ -92,12 +92,12 @@ public abstract class Employees {
 	}
 	
 	//Payment day weekly
-	public void setPaymentDayWeekly(int empPaymentDayWeekly) {
-		 this.paymentDayWeekly = empPaymentDayWeekly;
+	public void setPaymentWeeklyDay(int empPaymentWeeklyDay) {
+		 this.paymentWeeklyDay = empPaymentWeeklyDay;
 	}
 	
-	public int getPaymentDayWeekly() {
-		return this.paymentDayWeekly;
+	public int getPaymentWeeklyDay() {
+		return this.paymentWeeklyDay;
 	}
 	
 	//Monthly salary

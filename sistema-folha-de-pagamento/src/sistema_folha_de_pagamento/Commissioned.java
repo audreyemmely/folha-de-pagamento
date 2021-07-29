@@ -15,7 +15,7 @@ public class Commissioned extends Employees {
 		super.setEmployeeType("COMISSIONADO");
 		super.setPaymentMethod("DEPOSITO");
 		super.setScheduleType("BI-SEMANAL");
-		super.setPaymentDayWeekly(4);
+		super.setPaymentWeeklyDay(4);
 		super.setPaymentDate(-1);
 		setSalesCommission();
 		this.unionEmployee = false;

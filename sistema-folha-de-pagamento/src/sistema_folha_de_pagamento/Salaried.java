@@ -10,7 +10,7 @@ public class Salaried extends Employees {
 		super.setEmployeeType("ASSALARIADO");
 		super.setPaymentMethod("DEPOSITO");
 		super.setScheduleType("MENSAL");
-		super.setPaymentDayWeekly(-1);
+		super.setPaymentWeeklyDay(-1);
 		super.setPaymentDate(27);
 		this.unionEmployee = false;
 	}
