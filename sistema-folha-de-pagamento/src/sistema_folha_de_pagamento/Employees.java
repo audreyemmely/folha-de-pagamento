@@ -25,7 +25,7 @@ public abstract class Employees {
 	//Infos about employee
 	public void setName() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o nome completo do funcionário:");
+		System.out.println("Informe o nome completo do empregado:");
 		this.name = input.nextLine();
 	}
 	
@@ -35,6 +35,7 @@ public abstract class Employees {
 	
 	public void setAddress() {
 		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o endereço do empregado:");
 		this.address = input.nextLine();
 	}
 	
@@ -129,7 +130,7 @@ public abstract class Employees {
 	
 	public void setUnionId() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário referente ao sindicato: ");
+		System.out.println("Informe o novo ID do empregado referente ao sindicato: ");
 		int newUnionId = input.nextInt();
 		this.unionId = newUnionId;
 	}
@@ -174,19 +175,19 @@ public abstract class Employees {
 		Scanner input = new Scanner(System.in);
 		
 		if(this.unionEmployee == true) {
-			System.out.println("FUNCIONÁRIO FILIADO AO SINDICATO");
+			System.out.println("EMPREGADO FILIADO AO SINDICATO");
 			this.unionEmployee = false;
 			this.unionId = -1;
 			this.unionFee = 0;
 			this.othersFee = 0;
-			System.out.println("SITUAÇÃO ALTERADA: FUNCIONÁRIO NÃO FILIADO AO SINDICATO");
+			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO NÃO FILIADO AO SINDICATO");
 		}else {
-			System.out.println("FUNCIONÁRIO NÃO FILIADO AO SINDICATO");
+			System.out.println("EMPREGADO NÃO FILIADO AO SINDICATO");
 			this.unionEmployee = true;
 			setUnionId(empId);
 			setUnionFee(empId);
 			setOthersFee();
-			System.out.println("SITUAÇÃO ALTERADA: FUNCIONÁRIO FILIADO AO SINDICATO");
+			System.out.println("SITUAÇÃO ALTERADA: EMPREGADO FILIADO AO SINDICATO");
 		}
 	}
 

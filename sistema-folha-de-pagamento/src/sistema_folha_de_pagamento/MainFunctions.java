@@ -32,7 +32,7 @@ public class MainFunctions {
 	
 	public void printEmployeesList() {
 		if (employeesList.size() == 0) {
-			System.out.println("No momento não há funcionários cadastrados no sistema!\n");
+			System.out.println("No momento não há empregados cadastrados no sistema!\n");
 		}else {
 			for(int i = 0; i < employeesList.size(); ++i) {
 				System.out.println(employeesList.get(i).toString());
@@ -45,32 +45,32 @@ public class MainFunctions {
 		Employees aux = null;
 		int empType;
 		
-		System.out.println("Informe o tipo de funcionário:\n1 - ASSALARIADO\n2 - COMISSIONADO\n3 - HORISTA");
+		System.out.println("Informe o tipo de empregado:\n1 - ASSALARIADO\n2 - COMISSIONADO\n3 - HORISTA");
 		empType = input.nextInt();
 		
 		if(empType == 1) {
 			employeeId++;
 			aux = new Salaried(employeeId);
 			employeesList.add(aux);
-			System.out.println("Funcionário assalariado adicionado ao sistema com sucesso!");
+			System.out.println("Empregado assalariado adicionado ao sistema com sucesso!\n");
 		}else if(empType == 2) {
 			employeeId++;
 			aux = new Commissioned(employeeId);
 			employeesList.add(aux);
-			System.out.println("Funcionário comissionado adicionado ao sistema com sucesso!");
+			System.out.println("Empregado comissionado adicionado ao sistema com sucesso!\n");
 		}else if(empType == 3) {
 			employeeId++;
 			aux = new Hourly(employeeId);
 			employeesList.add(aux);
-			System.out.println("Funcionário horista adicionado ao sistema com sucesso!");
+			System.out.println("Empregado horista adicionado ao sistema com sucesso!\n");
 		}else {
-			System.out.println("Por favor, informe um tipo de funcionário válido.\n");
+			System.out.println("Por favor, informe um tipo de empregado válido.\n");
 		}
 	}
 	
 	public void deleteEmployee() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário a ser removido: ");
+		System.out.println("Informe o ID do empregado a ser removido: ");
 		printEmployeesList();
 		int empId = input.nextInt();
 		int index = -1;
@@ -78,15 +78,15 @@ public class MainFunctions {
 		
 		if(index != -1) {
 			employeesList.remove(index);
-			System.out.println("O funcionário com ID " + empId + " foi removido do sistema!\n");
+			System.out.println("O empregado com ID " + empId + " foi removido do sistema!\n");
 		}else {
-			System.out.println("O funcionário com ID " + empId + " não existe no sistema.\n");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
 	public void launchTimecard() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário para lançar o cartão de ponto: ");
+		System.out.println("Informe o ID do empregado para lançar o cartão de ponto: ");
 		printEmployeesList();
 		int empId = input.nextInt();
 		int index = -1;
@@ -96,16 +96,16 @@ public class MainFunctions {
 			if(employeesList.get(index).getEmployeeType().equals("HORISTA")) {
 				Timecard.setTimecard((Hourly) employeesList.get(index));	
 			}else {
-				System.out.println("O funcionário com ID " + empId + "não é horista.\n");
+				System.out.println("O empregado com ID " + empId + " não é horista.\n");
 			}
 		}else {
-			System.out.println("O funcionário com ID " + empId + " não existe no sistema.\n");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
 	public void addSalesResult() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário para lançar o resultado das vendas: ");
+		System.out.println("Informe o ID do empregado para lançar o resultado das vendas: ");
 		printEmployeesList();
 		int empId = input.nextInt();
 		int index = -1;
@@ -115,16 +115,16 @@ public class MainFunctions {
 			if(employeesList.get(index).getEmployeeType().equals("COMISSIONADO")) {
 				((Commissioned) employeesList.get(index)).setSalesResult();
 			}else {
-				System.out.println("O funcionário com ID " + empId + " não é comissionado.\n");
+				System.out.println("O empregado com ID " + empId + " não é comissionado.\n");
 			}
 		}else {
-			System.out.println("O funcionário com ID " + empId + " não existe no sistema.\n");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
 	public void addServiceCharge() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário ao qual deve ser lançada uma taxa de serviço: ");
+		System.out.println("Informe o ID do empregado ao qual deve ser lançada uma taxa de servico: ");
 		printEmployeesList();
 		int empId = input.nextInt();
 		int index = -1;
@@ -134,16 +134,16 @@ public class MainFunctions {
 			if(employeesList.get(index).getUnionEmployee() == true) {
 				employeesList.get(index).setOthersFee();
 			}else {
-				System.out.println("O funcionário com ID " + empId + " não faz parte do sindicato.\n");
+				System.out.println("O empregado com ID " + empId + " não faz parte do sindicato.\n");
 			}
 		}else {
-			System.out.println("O funcionário com ID " + empId + " não existe no sistema.\n");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
 	public void changeEmployeeData() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Informe o ID do funcionário que você deseja alterar os dados:");
+		System.out.println("Informe o ID do empregado que você deseja alterar os dados:");
 		printEmployeesList();
 		int empId = input.nextInt();
 		int index = -1;
@@ -151,7 +151,7 @@ public class MainFunctions {
 		
 		if(index != -1) {
 			System.out.println("Qual dado você deseja alterar?\n[1] - Nome\n[2] - Endereço\n"+
-								"[3] - Tipo do funcionário\n[4] - Método de pagamento\n[5] - Situação sindical\n"+
+								"[3] - Tipo do empregado\n[4] - Método de pagamento\n[5] - Situação sindical\n"+
 								"[6] - Identificação no sindicato\n[7] - Taxa sindical\n");
 			
 			int choice = input.nextInt();
@@ -163,10 +163,10 @@ public class MainFunctions {
 				employeesList.get(index).setAddress();
 				System.out.println("Endereço alterado com sucesso!");
 			}else if(choice == 3) {
-				System.out.println("O funcionário escolhido é do tipo " + employeesList.get(index).getEmployeeType());
+				System.out.println("O empregado escolhido é do tipo " + employeesList.get(index).getEmployeeType());
 				int empType = 0;
 				if(employeesList.get(index).equals("ASSALARIADO")) {
-					System.out.println("Informe o novo tipo de funcionário:\n[2] - COMISSIONADO\n[3] - HORISTA");
+					System.out.println("Informe o novo tipo de empregado:\n[2] - COMISSIONADO\n[3] - HORISTA");
 					empType = input.nextInt();
 					if(empType == 2) {
 						employeesList.get(index).setMonthlySalary();
@@ -182,10 +182,10 @@ public class MainFunctions {
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 					}else {
-						System.out.println("Tipo de funcionário não encontrado.");
+						System.out.println("Tipo de empregado não encontrado.");
 					}
 				}else if(employeesList.get(index).equals("COMISSIONADO")) {
-					System.out.println("Informe o novo tipo de funcionário:\n[1] - ASSALARIADO\n[3] - HORISTA");
+					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - HORISTA");
 					empType = input.nextInt();
 					if(empType == 1) {
 						employeesList.get(index).setEmployeeLiquidSalary();
@@ -200,10 +200,10 @@ public class MainFunctions {
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 					}else {
-						System.out.println("Tipo de funcionário não encontrado.");
+						System.out.println("Tipo de empregado não encontrado.");
 					}
 				}else if(employeesList.get(index).equals("HORISTA")) {
-					System.out.println("Informe o novo tipo de funcionário:\n[1] - ASSALARIADO\n[3] - COMISSIONADO");
+					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - COMISSIONADO");
 					empType = input.nextInt();	
 					if(empType == 1) {
 						employeesList.get(index).setEmployeeLiquidSalary();
@@ -219,11 +219,11 @@ public class MainFunctions {
 						employeesList.get(index).setPaymentDate(-1);
 						((Commissioned) employeesList.get(index)).setSalesResult();
 					}else {
-						System.out.println("Tipo de funcionário não encontrado.");
+						System.out.println("Tipo de empregado não encontrado.");
 					}
 				}
 			}else if(choice == 4) {
-				System.out.println("O funcionário recebe da seguinte forma: " + employeesList.get(index).getPaymentMethod());
+				System.out.println("O empregado recebe da seguinte forma: " + employeesList.get(index).getPaymentMethod());
 				int paymentType;
 				if(employeesList.get(index).equals("CORREIOS")) {
 					System.out.println("Informe o novo tipo de pagamento:\n[1] - DEPOSITO\n[2] - EM MAOS");
@@ -243,7 +243,7 @@ public class MainFunctions {
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
 					}else {
-						System.out.println("O tipo de pagamento informado não é válido.");
+						System.out.println("O tipo de pagamento informado nao eh valido.");
 					}
 				}else if(employeesList.get(index).equals("DEPOSITO")) {
 					System.out.println("Informe o novo tipo de pagamento:\n[2] - EM MAOS\n[3] - CORREIOS");
@@ -253,29 +253,29 @@ public class MainFunctions {
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
 					}else {
-						System.out.println("O tipo de pagamento informado não é válido.");
+						System.out.println("O tipo de pagamento informado nao eh valido.");
 					}
 				}
 			}else if(choice == 5) {
 				employeesList.get(index).setUnionMembership(employeesList.get(index).getEmployeeId());
-				System.out.println("Situação sindical alterada com sucesso!");
+				System.out.println("Situacao sindical alterada com sucesso!");
 			}else if(choice == 6) {
 				if(employeesList.get(index).getUnionEmployee() == true) {
 					employeesList.get(index).setUnionId();
-					System.out.println("A identificação sindical do funcionário foi alterada.");
+					System.out.println("A identificação sindical do empregado foi alterada.");
 				}else {
-					System.out.println("O funcionário informado não faz parte do sindicato.");
+					System.out.println("O empregado informado nao faz parte do sindicato.");
 				}
 			}else if(choice == 7) {
 				if(employeesList.get(index).getUnionEmployee() == true) {
 					employeesList.get(index).setUnionFee(employeesList.get(index).getEmployeeId());
-					System.out.println("A taxa sindical do funcionário foi alterada.");
+					System.out.println("A taxa sindical do empregado foi alterada.");
 				}else {
-					System.out.println("O funcionário informado não faz parte do sindicato.");
+					System.out.println("O empregado informado não faz parte do sindicato.");
 				}
 			}
 		}else {
-			System.out.println("O funcionário com ID " + empId + " não existe no sistema.\n");
+			System.out.println("O empregado com ID " + empId + " não existe no sistema.\n");
 		}
 	}
 	
