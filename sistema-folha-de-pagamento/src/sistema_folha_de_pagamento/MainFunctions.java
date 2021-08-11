@@ -165,7 +165,7 @@ public class MainFunctions {
 			}else if(choice == 3) {
 				System.out.println("O empregado escolhido é do tipo " + employeesList.get(index).getEmployeeType());
 				int empType = 0;
-				if(employeesList.get(index).equals("ASSALARIADO")) {
+				if(employeesList.get(index).getEmployeeType().equals("ASSALARIADO")) {
 					System.out.println("Informe o novo tipo de empregado:\n[2] - COMISSIONADO\n[3] - HORISTA");
 					empType = input.nextInt();
 					if(empType == 2) {
@@ -184,7 +184,7 @@ public class MainFunctions {
 					}else {
 						System.out.println("Tipo de empregado não encontrado.");
 					}
-				}else if(employeesList.get(index).equals("COMISSIONADO")) {
+				}else if(employeesList.get(index).getEmployeeType().equals("COMISSIONADO")) {
 					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - HORISTA");
 					empType = input.nextInt();
 					if(empType == 1) {
@@ -202,8 +202,8 @@ public class MainFunctions {
 					}else {
 						System.out.println("Tipo de empregado não encontrado.");
 					}
-				}else if(employeesList.get(index).equals("HORISTA")) {
-					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[3] - COMISSIONADO");
+				}else if(employeesList.get(index).getEmployeeType().equals("HORISTA")) {
+					System.out.println("Informe o novo tipo de empregado:\n[1] - ASSALARIADO\n[2] - COMISSIONADO");
 					empType = input.nextInt();	
 					if(empType == 1) {
 						employeesList.get(index).setEmployeeLiquidSalary();
@@ -211,7 +211,7 @@ public class MainFunctions {
 						employeesList.get(index).setScheduleType("MENSAL");
 						employeesList.get(index).setPaymentWeeklyDay(-1);
 						employeesList.get(index).setPaymentDate(27);
-					}else if(empType == 3) {
+					}else if(empType == 2) {
 						employeesList.get(index).setMonthlySalary();
 						employeesList.get(index).setEmployeeType("COMISSIONADO");
 						employeesList.get(index).setScheduleType("BI-SEMANAL");
@@ -225,7 +225,7 @@ public class MainFunctions {
 			}else if(choice == 4) {
 				System.out.println("O empregado recebe da seguinte forma: " + employeesList.get(index).getPaymentMethod());
 				int paymentType;
-				if(employeesList.get(index).equals("CORREIOS")) {
+				if(employeesList.get(index).getPaymentMethod().equals("CORREIOS")) {
 					System.out.println("Informe o novo tipo de pagamento:\n[1] - DEPOSITO\n[2] - EM MAOS");
 					paymentType = input.nextInt();
 					if(paymentType == 1) {
@@ -235,7 +235,7 @@ public class MainFunctions {
 					}else {
 						System.out.println("O tipo de pagamento informado não é válido.");
 					}
-				}else if(employeesList.get(index).equals("EM MAOS")) {
+				}else if(employeesList.get(index).getPaymentMethod().equals("EM MAOS")) {
 					System.out.println("Informe o novo tipo de pagamento:\n[1] - DEPOSITO\n[3] - CORREIOS");
 					paymentType = input.nextInt();
 					if(paymentType == 1) {
@@ -243,9 +243,9 @@ public class MainFunctions {
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
 					}else {
-						System.out.println("O tipo de pagamento informado nao eh valido.");
+						System.out.println("O tipo de pagamento informado não é valido.");
 					}
-				}else if(employeesList.get(index).equals("DEPOSITO")) {
+				}else if(employeesList.get(index).getPaymentMethod().equals("DEPOSITO")) {
 					System.out.println("Informe o novo tipo de pagamento:\n[2] - EM MAOS\n[3] - CORREIOS");
 					paymentType = input.nextInt();
 					if(paymentType == 2) {
@@ -253,7 +253,7 @@ public class MainFunctions {
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
 					}else {
-						System.out.println("O tipo de pagamento informado nao eh valido.");
+						System.out.println("O tipo de pagamento informado não é valido.");
 					}
 				}
 			}else if(choice == 5) {
