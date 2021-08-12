@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class MainFunctions {
 	private ArrayList<Employees> employeesList;
+	private ArrayList<String> newSchedule;
 	private int employeeId = 0;
 	
 	public ArrayList<Employees> getEmployeesList() {
@@ -14,6 +15,7 @@ public class MainFunctions {
 	//Constructor
 	public MainFunctions(boolean start) {
 		employeesList = new ArrayList<Employees>();
+		newSchedule = new ArrayList<String>();
 	}
 	
 	public int searchEmployeeId(ArrayList<Employees> emp, int empId) {
@@ -298,8 +300,116 @@ public class MainFunctions {
 		}else {
 			paymentDay = dayMonth;
 			if(dayMonth > 23 && dayMonth < 29) {
-				//criar pagamento agenda
+				SchedulePayment.monthlyPayment(employeesList, paymentDay - 1);
+			}
+		}
+		SchedulePayment.weeklyPayment(employeesList, weekDay - 1);
+		
+		if((dayMonth > 7 && dayMonth < 15) || (dayMonth > 21 && dayMonth < 29)) {
+			SchedulePayment.biweeklyPayment(employeesList, weekDay - 1);
+		}
+	}
+	
+	public void undoRedo() {
+		System.out.println("Indisponível no momento.");
+	}
+	
+	public void printNewSchedulesList() {
+		if(newSchedule.size() == 0) {
+			System.out.println("Não há novas agendas.\n");
+		}else {
+			for(int i = 0; i < newSchedule.size(); ++i) {
+				int index = i;
+				index++;
+				System.out.println("Agenda " + index + ": " + newSchedule.get(i));
 			}
 		}
 	}
+	
+	public void changeSchedulePayment() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o ID do empregado que deseja alterar a agenda: ");
+		printEmployeesList();
+		int empId = input.nextInt();
+		int index = -1;
+		index = searchEmployeeId(employeesList, empId);
+		
+		if(index != -1) {
+			System.out.println("Qual o tipo de agenda que o empregado fará parte agora?\n[1] - SEMANAL\n[2] - BI-SEMANAL\n[3] - MENSAL");
+			int option = input.nextInt();
+			if(option == 1) {
+				if(employeesList.get(index).getScheduleType().equals("SEMANAL")) {
+					System.out.println("O empregado já está cadastrado na agenda semanal.");
+				}else {
+					employeesList.get(index).setScheduleType("SEMANAL");
+					employeesList.get(index).setPaymentWeeklyDay(4);
+					employeesList.get(index).setPaymentDate(-1);
+				}
+			} else if(option == 2) {
+				if(employeesList.get(index).getScheduleType().equals("BI-SEMANAL")) {
+					System.out.println("O empregado já está cadastrado na agenda bi-semanal.");
+				}else {
+					employeesList.get(index).setScheduleType("BI-SEMANAL");
+					employeesList.get(index).setPaymentWeeklyDay(4);
+					employeesList.get(index).setPaymentDate(-1);
+				}
+			} else if(option == 3) {
+				if(employeesList.get(index).getScheduleType().equals("MENSAL")) {
+					System.out.println("O empregado já está cadastrado na agenda mensal.");
+				}else {
+					employeesList.get(index).setScheduleType("MENSAL");
+					employeesList.get(index).setPaymentWeeklyDay(-1);
+					employeesList.get(index).setPaymentDate(27);
+				}
+			}else {
+				System.out.println("O tipo de agenda informada não existe.");
+			}
+		}else {
+			System.out.println("O empregado informado não existe.");
+		}
+	}
+	
+	public void createNewSchedulePayment() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Informe o tipo de agenda a ser criada:  (exeplo: mensal 1 / mensal $ / semanal 1 segunda / semanal 2 segunda)");
+		String newSchedulePayment = input.nextLine();
+		int dayMonthPayment = 0;
+		int weeklyPayment = 0;
+		String[] aux;
+		aux = newSchedulePayment.split(" ");
+		
+		if(aux.length == 2) {
+			if(aux[0].equals("mensal")) {
+				if(aux[1].equals("$")) {
+					newSchedule.add(newSchedulePayment);
+				}else {
+					dayMonthPayment = Integer.parseInt(aux[1]);
+					if(dayMonthPayment >= 1 && dayMonthPayment <= 27) {
+						newSchedule.add(newSchedulePayment);
+					}else {
+						System.out.println("Data de pagamento inválida.");
+					}
+				}
+			}else {
+				System.out.println("Tipo de agenda inválido.");
+			}
+		}else if(aux.length == 3) {
+			if(aux[0].equals("semanal")) {
+				weeklyPayment = Integer.parseInt(aux[1]);
+				if(weeklyPayment >= 1 && weeklyPayment <= 4) {
+					if(aux[2].equals("segunda") || aux[2].equals("terça") || aux[2].equals("quarta") || aux[2].equals("quinta") || aux[2].equals("sexta")) {
+						newSchedule.add(newSchedulePayment);
+					}else {
+						System.out.println("O dia informado é inválido.");
+					}
+				}else {
+					System.out.println("O número da semana informado é inválido.");
+				}
+			}else {
+				System.out.println("Tipo de agenda inválido.");
+			}
+		}
+		printNewSchedulesList();
+	}
+	
 }
