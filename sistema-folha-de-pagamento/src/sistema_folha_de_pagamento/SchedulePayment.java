@@ -20,8 +20,7 @@ public class SchedulePayment {
 	public static void biweeklyPayment(ArrayList<Employees> employees, int weeklyDay) {
 		for(int i = 0; i < employees.size(); ++i) {
 			if(employees.get(i).getScheduleType().equals("BI-SEMANAL") && employees.get(i).getPaymentWeeklyDay() == weeklyDay) {
-				System.out.println("ID: " + employees.get(i).getEmployeeId() +
-									"\nNome: " + employees.get(i).getName() +
+				System.out.println("ID: " + employees.get(i).getEmployeeId() + "\nNome: " + employees.get(i).getName() +
 									"\nSalário: R$ " + ((Commissioned )employees.get(i)).setEmployeeLiquidSalary() +
 									"\nMétodo de pagamento: " + employees.get(i).getPaymentMethod() + "\n");
 				employees.get(i).setEmployeeLiquidSalary(0);
@@ -32,10 +31,9 @@ public class SchedulePayment {
 	public static void monthlyPayment(ArrayList<Employees> employees, int paymentDate) {
 		for(int i = 0; i < employees.size(); ++i) {
 			if(employees.get(i).getScheduleType().equals("MENSAL") && employees.get(i).getPaymentDate() == paymentDate) {
-                System.out.println("ID: " + employees.get(i).getEmployeeId() +
-                        "\nNome: " + employees.get(i).getName() +
-                        "\nSalário: R$ " +((Salaried )employees.get(i)).setEmployeeLiquidSalary() +
-                        "\nMétodo de pagamento: " + employees.get(i).getPaymentMethod() + "\n");
+                System.out.println("ID: " + employees.get(i).getEmployeeId() + "\nNome: " + employees.get(i).getName() +
+                					"\nSalário: R$ " +((Salaried )employees.get(i)).setEmployeeLiquidSalary() + 
+                					"\nMétodo de pagamento: " + employees.get(i).getPaymentMethod() + "\n");
                 employees.get(i).setEmployeeLiquidSalary(0);
 			}
 		}
