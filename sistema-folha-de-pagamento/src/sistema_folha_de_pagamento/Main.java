@@ -8,7 +8,7 @@ public class Main {
 	public static void systemMenu() {
 		System.out.println("Bem-vindo/a ao Sistema de Folha de Pagamento!\nInforme a operação que deseja realizar no momento.");
 		System.out.println("[0] Sair do Sistema\n[1] Adicionar empregado\n[2] Remover empregado\n[3] Lançar um cartão de ponto\n[4] Lançar um resultado da venda\n[5] Lancar uma taxa de serviço");
-		System.out.println("[6] Alterar detalhes de um empregado\n");
+		System.out.println("[6] Alterar detalhes de um empregado\n[7] Rodar folha de pagamento do dia\n[8] Undo/Redo\n[9] Agenda de pagamento\n[10] Criar novas agendas de pagamentos\n");
 	}
 	
 	public static void main(String[] args) {
@@ -48,20 +48,23 @@ public class Main {
 				payrollSystem.changeEmployeeData();
 				varAux = true;
 			}else if(option == 7) {
-				System.out.println("==== Função rodar a folha de pagamento para hoje ====\nEm andamento...");
-				//a fazer
+				System.out.println("==== Função rodar a folha de pagamento para hoje ====\n");
+				payrollSystem.runCurrentPayroll();
+				varAux = true;
 			}else if(option == 8) {
 				System.out.println("==== Função undo/redo ====\nNão iniciado.");
 				//a fazer
 			}else if(option == 9) {
-				System.out.println("==== Função agenda de pagamento ====\nNão iniciado.");
-				//a fazer
+				System.out.println("==== Função agenda de pagamento ====\n");
+				payrollSystem.changeSchedulePayment();
+				varAux = true;
 			}else if(option == 10) {
-				System.out.println("==== Função criação de novas agendas de pagamento ====\nNão iniciado.");
-				//a fazer
+				System.out.println("==== Função criação de novas agendas de pagamento ====\n");
+				payrollSystem.createNewSchedulePayment();
+				varAux = true;
 			}else {
 				varAux = false;
-			}					
+			}				
 		}
 	}
 	
