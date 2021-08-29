@@ -55,7 +55,7 @@ public class Commissioned extends Employees {
 	
 	@Override
 	public double setEmployeeLiquidSalary() {
-		return this.liquidSalary += this.monthlySalary/2;
+		return this.liquidSalary += this.monthlySalary/2 + getSalesCommission()*getSalesResult() - getUnionFee()/2 - getOthersFee()/2;
 	}
 	
 }
