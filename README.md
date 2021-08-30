@@ -14,7 +14,6 @@ gerenciar os dados destes empregados, a exemplo os cartões de pontos. Empregado
 [Segunda versão do sistema (refatorado)](https://github.com/audreyemmely/folha-de-pagamento/tree/main/payroll_refac)
 
 <br/>
-
 ## 🛠️ Tecnologias utilizadas
 - Java JDK 16.0.1
 
