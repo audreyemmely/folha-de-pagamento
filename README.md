@@ -1,4 +1,4 @@
-# Sitema de Folha de Pagamento
+# Sistema de Folha de Pagamento
 
 Acesse a especificação do projeto completa [aqui](https://github.com/audreyemmely/folha-de-pagamento/blob/main/especificacao_projeto.pdf).
 
