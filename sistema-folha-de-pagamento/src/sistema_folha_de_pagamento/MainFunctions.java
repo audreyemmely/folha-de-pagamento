@@ -177,12 +177,14 @@ public class MainFunctions {
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 						((Commissioned) employeesList.get(index)).setSalesResult();
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else if(empType == 3) {
 						((Hourly) employeesList.get(index)).setHourlyWage();
 						employeesList.get(index).setEmployeeType("HORISTA");
 						employeesList.get(index).setScheduleType("SEMANAL");
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else {
 						System.out.println("Tipo de empregado não encontrado.");
 					}
@@ -195,12 +197,14 @@ public class MainFunctions {
 						employeesList.get(index).setScheduleType("MENSAL");
 						employeesList.get(index).setPaymentWeeklyDay(-1);
 						employeesList.get(index).setPaymentDate(27);
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else if(empType == 3) {
 						((Hourly) employeesList.get(index)).setHourlyWage();
 						employeesList.get(index).setEmployeeType("HORISTA");
 						employeesList.get(index).setScheduleType("SEMANAL");
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else {
 						System.out.println("Tipo de empregado não encontrado.");
 					}
@@ -213,6 +217,7 @@ public class MainFunctions {
 						employeesList.get(index).setScheduleType("MENSAL");
 						employeesList.get(index).setPaymentWeeklyDay(-1);
 						employeesList.get(index).setPaymentDate(27);
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else if(empType == 2) {
 						employeesList.get(index).setMonthlySalary();
 						employeesList.get(index).setEmployeeType("COMISSIONADO");
@@ -220,6 +225,7 @@ public class MainFunctions {
 						employeesList.get(index).setPaymentWeeklyDay(4);
 						employeesList.get(index).setPaymentDate(-1);
 						((Commissioned) employeesList.get(index)).setSalesResult();
+						System.out.println("Tipo de empregado alterado com sucesso.");
 					}else {
 						System.out.println("Tipo de empregado não encontrado.");
 					}
@@ -232,8 +238,10 @@ public class MainFunctions {
 					paymentType = input.nextInt();
 					if(paymentType == 1) {
 						employeesList.get(index).setPaymentMethod("DEPOSITO");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else if(paymentType == 2) {
 						employeesList.get(index).setPaymentMethod("EM MAOS");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else {
 						System.out.println("O tipo de pagamento informado não é válido.");
 					}
@@ -242,8 +250,10 @@ public class MainFunctions {
 					paymentType = input.nextInt();
 					if(paymentType == 1) {
 						employeesList.get(index).setPaymentMethod("DEPOSITO");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else {
 						System.out.println("O tipo de pagamento informado não é valido.");
 					}
@@ -252,8 +262,10 @@ public class MainFunctions {
 					paymentType = input.nextInt();
 					if(paymentType == 2) {
 						employeesList.get(index).setPaymentMethod("EM MAOS");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else if(paymentType == 3) {
 						employeesList.get(index).setPaymentMethod("CORREIOS");
+						System.out.println("Tipo de pagamento alterado com sucesso.");
 					}else {
 						System.out.println("O tipo de pagamento informado não é valido.");
 					}
@@ -344,6 +356,7 @@ public class MainFunctions {
 					employeesList.get(index).setScheduleType("SEMANAL");
 					employeesList.get(index).setPaymentWeeklyDay(4);
 					employeesList.get(index).setPaymentDate(-1);
+					System.out.println("Tipo de agenda alterada com sucesso.");
 				}
 			} else if(option == 2) {
 				if(employeesList.get(index).getScheduleType().equals("BI-SEMANAL")) {
@@ -352,6 +365,7 @@ public class MainFunctions {
 					employeesList.get(index).setScheduleType("BI-SEMANAL");
 					employeesList.get(index).setPaymentWeeklyDay(4);
 					employeesList.get(index).setPaymentDate(-1);
+					System.out.println("Tipo de agenda alterada com sucesso.");
 				}
 			} else if(option == 3) {
 				if(employeesList.get(index).getScheduleType().equals("MENSAL")) {
@@ -360,6 +374,7 @@ public class MainFunctions {
 					employeesList.get(index).setScheduleType("MENSAL");
 					employeesList.get(index).setPaymentWeeklyDay(-1);
 					employeesList.get(index).setPaymentDate(27);
+					System.out.println("Tipo de agenda alterada com sucesso.");
 				}
 			}else {
 				System.out.println("O tipo de agenda informada não existe.");
