@@ -8,7 +8,7 @@ manage the data of these employees, such as the scorecards. Employees must recei
 
 ## Design patterns
 ### [Template Method](https://refactoring.guru/pt-br/design-patterns/template-method) and [Extract Method](https://refactoring.guru/pt-br/extract-method)
-Description: 
+Description: The abstract class Employees has the variable liquidSalary and the concrete class Hourly has the variable salaryDay which refer to the net salary and the salary for the day respectively. This was simplified by removing salaryDay and creating grossSalary, avoiding the redundancy caused by using salaryDay and allowing extensibility if more employee types are created. The use of this extensibility was also applied to the concrete class SalariedEmployee, in which this new variable was used.
 
 ### [Singleton](https://refactoring.guru/pt-br/design-patterns/singleton)
 Description:
