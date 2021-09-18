@@ -8,7 +8,7 @@ public class Menu {
 	private static MainFunctions payrollSystem = new MainFunctions(true);
 
 	public static void systemMenu() {
-		System.out.println("Bem-vindo/a ao Sistema de Folha de Pagamento!\nInforme a operação que deseja realizar no momento.");
+		System.out.println("Bem-vindo/a ao Sistema de Folha de Pagamento Refatorado!\nInforme a operação que deseja realizar no momento.");
 		System.out.println("[0] Sair do Sistema\n[1] Adicionar empregado\n[2] Remover empregado\n[3] Lançar um cartão de ponto\n[4] Lançar um resultado da venda\n[5] Lancar uma taxa de serviço");
 		System.out.println("[6] Alterar detalhes de um empregado\n[7] Rodar folha de pagamento do dia\n[8] Undo/Redo\n[9] Agenda de pagamento\n[10] Criar novas agendas de pagamentos\n");
 	}
