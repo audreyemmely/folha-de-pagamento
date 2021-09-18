@@ -10,9 +10,12 @@ gerenciar os dados destes empregados, a exemplo os cartões de pontos. Empregado
 ## AB1
 [Primeira versão do sistema](https://github.com/audreyemmely/folha-de-pagamento/tree/main/sistema-folha-de-pagamento)
 
+![Alt Text](https://media1.giphy.com/media/cXblnKXr2BQOaYnTni/giphy.gif?cid=ecf05e476vz84lqdojl6yp461t9md5cvneofps73w27k39ru&rid=giphy.gif&ct=g)
+
 ## AB2
 [Segunda versão do sistema (refatorado)](https://github.com/audreyemmely/folha-de-pagamento/tree/main/payroll_refac)
 
+![Alt Text](https://media1.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif?cid=ecf05e476vz84lqdojl6yp461t9md5cvneofps73w27k39ru&rid=giphy.gif&ct=g)
 <br/>
 
 ## 🛠️ Tecnologias utilizadas
